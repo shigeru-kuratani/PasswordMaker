@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Password Maker</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-body clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">PasswordMaker</a></div>
+    </nav>
+    <main class="page">
+        <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(9, 162, 255, 0.85);">
+            <div class="text">
+                <h2>パスワード生成サービス</h2>
+                <p>作成するパスワードの桁数を入力して、パスワードの形態ボタンをクリックしてください。<br>入力した個数分のパスワードが作成されます。<br>※桁数の有効桁数は50です。<br>※個数の最大値は100です。</p>
+            </div>
+        </section>
+        <section class="clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <div class="row justify-content-center">
+                        <div class="col col-md-5">
+                            <div class="alert alert-danger d-none" role="alert" id="errMessage"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 col-md-5 d-flex flex-column align-items-end"><label class="col-form-label">桁数</label></div>
+                        <div class="col-9 col-md-7 d-flex flex-column align-items-start py-1"><input type="text" id="digitInput"></div>
+                        <div class="col-3 col-md-5 d-flex flex-column align-items-end"><label class="col-form-label">個数</label></div>
+                        <div class="col-9 col-md-7 d-flex flex-column align-items-start py-1"><input type="text" id="countInput"></div>
+                        <div class="col-3 col-md-5 d-flex flex-column align-items-end"><label class="col-form-label">記号</label></div>
+                        <div class="col-9 col-md-7 d-flex py-1">
+                            <div class="row">
+                                <div class="col d-flex flex-column me-2">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1" name="symbol" value="33"><label class="form-check-label" for="formCheck-1">!</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2" name="symbol" value="35"><label class="form-check-label" for="formCheck-2">#</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3" name="symbol" value="36"><label class="form-check-label" for="formCheck-3">$</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name="symbol" value="37"><label class="form-check-label" for="formCheck-4">%</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5" name="symbol" value="38"><label class="form-check-label" for="formCheck-5">&amp;</label></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex flex-column me-2">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-6" name="symbol" value="42"><label class="form-check-label" for="formCheck-6">*</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-7" name="symbol" value="43"><label class="form-check-label" for="formCheck-7">+</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-8" name="symbol" value="45"><label class="form-check-label" for="formCheck-8">-</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-9" name="symbol" value="46"><label class="form-check-label" for="formCheck-9">.</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-10" name="symbol" value="47"><label class="form-check-label" for="formCheck-10">/</label></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex flex-column me-2">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-11" name="symbol" value="64"><label class="form-check-label" for="formCheck-11">@</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-12" name="symbol" value="92"><label class="form-check-label" for="formCheck-12">\</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-13" name="symbol" value="94"><label class="form-check-label" for="formCheck-13">^</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-14" name="symbol" value="95"><label class="form-check-label" for="formCheck-14">_</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-15" name="symbol" value="124"><label class="form-check-label" for="formCheck-15">|</label></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex flex-column">
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-16" name="symbol" value="126"><label class="form-check-label" for="formCheck-16">~</label></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary me-2 btn-sm" id="btnNumber" type="button">数字</button>
+                            <button class="btn btn-primary me-2 btn-sm" id="btnAlphabetNumber" type="button">英数字</button>
+                            <button class="btn btn-primary me-2 btn-sm" id="btnLowerAlphabet" type="button">英字(小文字)</button>
+                            <button class="btn btn-primary btn-sm my-2" id="btnUpperAlphabet" type="button">英字(大文字)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col col-md-6" id="disp"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>© 2024 Copyright Shgieru Kuratani.</p>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/baguetteBox.min.js"></script>
+    <script src="assets/js/vanilla-zoom.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
